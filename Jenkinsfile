@@ -16,10 +16,11 @@ node {
     
       stage('BUILD') {
           def mvn_version = 'maven'
-withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-  sh "mvn clean"
-}
-       }
+          withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+            sh "cd functionaltest"
+            sh "mvn clean"
+          }
+      }
 
     /*stage('Artifactory configuration') {
         // Tool name from Jenkins configuration
