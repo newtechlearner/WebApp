@@ -14,12 +14,11 @@ node {
         git url: 'https://github.com/newtechlearner/webapp.git'
       }
       stage('BUILD') {
-          steps {
+          
 sh '''
 echo "PATH = ${PATH}"
 echo "M2_HOME = ${M2_HOME}"
 '''
-}
       }
 
     /*stage('Artifactory configuration') {
