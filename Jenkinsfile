@@ -18,6 +18,7 @@ node {
 sh '''
 echo "PATH = ${PATH}"
 echo "M2_HOME = ${M2_HOME}"
+cd functionaltest
 mvn clean
 mvn test
 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '\\functionaltest\\target\\surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
