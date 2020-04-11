@@ -6,14 +6,14 @@ node {
 	def rtMaven = Artifactory.newMavenBuild()
 	def buildInfo
     
-	agent none
+	agent any
 	tools {
 		maven 'maven'
 	}
-	rtMaven.tool = "maven"
+	//rtMaven.tool = "maven"
 
 	stage('Clone sources') {
-        git url: 'https://github.com/newtechlearner/webapp.git'
+		git url: 'https://github.com/newtechlearner/webapp.git'
 	}
 
     /*stage('Artifactory configuration') {
