@@ -1,6 +1,5 @@
 
 node {
-	agent any
 	tools {
 		maven 'maven'
 	}
