@@ -1,15 +1,16 @@
 
 node {
+	agent any
+	tools {
+		maven 'maven'
+	}
 	// Get Artifactory server instance, defined in the Artifactory Plugin administration page.
 	def server = Artifactory.server "artifactory"
 	// Create an Artifactory Maven instance.
 	def rtMaven = Artifactory.newMavenBuild()
 	def buildInfo
     
-	agent any
-	tools {
-		maven 'maven'
-	}
+	
 	//rtMaven.tool = "maven"
 
 	stage('Clone sources') {
