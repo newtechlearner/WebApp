@@ -8,7 +8,7 @@ node {
     
     //rtMaven.tool = "maven"
     tools{
-     maven 'maven 3'
+     maven 'maven'
     }
     
     
