@@ -5,7 +5,7 @@ pipeline {
     // Create an Artifactory Maven instance.
     //def rtMaven = Artifactory.newMavenBuild()
     //def buildInfo
-    def maven = "maven"
+    
     //rtMaven.tool = "maven"
 
     
