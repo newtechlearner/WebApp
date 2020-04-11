@@ -14,15 +14,11 @@ node {
         git url: 'https://github.com/newtechlearner/webapp.git'
       }
       stage('BUILD') {
-       steps {
-       // One or more steps need to be included within the steps block.
-        }
 
       tools {
        maven 'maven'
        jdk 'jdk'
       }
-    
 
 }
 
