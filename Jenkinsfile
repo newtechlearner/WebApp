@@ -16,6 +16,8 @@ node {
       stage('BUILD') {
           
 sh '''
+echo "PATH = ${PATH}"
+echo "M2_HOME = ${M2_HOME}"
 cd functionaltest
 mvn clean
 mvn test
