@@ -7,7 +7,9 @@ node {
     //def buildInfo
     
     //rtMaven.tool = "maven"
-
+    tools{
+     maven 'maven 3'
+    }
     
     
       stage('Clone sources') {
