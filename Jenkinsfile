@@ -1,11 +1,11 @@
 
-node {
+pipeline {
     // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
     //def server = Artifactory.server "artifactory"
     // Create an Artifactory Maven instance.
     //def rtMaven = Artifactory.newMavenBuild()
     //def buildInfo
-    
+    def maven = "maven"
     //rtMaven.tool = "maven"
 
     
@@ -14,12 +14,13 @@ node {
         git url: 'https://github.com/newtechlearner/webapp.git'
       }
       stage('BUILD') {
-
-      tool {
-       maven 'maven'
-      }
-
+          steps {
+sh '''
+echo "PATH = ${PATH}"
+echo "M2_HOME = ${M2_HOME}"
+'''
 }
+      }
 
     /*stage('Artifactory configuration') {
         // Tool name from Jenkins configuration
