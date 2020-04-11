@@ -14,6 +14,15 @@ node {
         git url: 'https://github.com/newtechlearner/webapp.git'
       }
     
+      stage('Maven Build'){
+        def mvnHome = tool name: 'maven', type: 'maven'
+		sh "${mvnHome}/bin/mvn clean package"
+      }
+		
+	  stage('Deploy QA'){
+    	deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://3.17.208.192:8080/')], contextPath: 'QAWebapp', war: '**/*.war'
+      }	
+    
       stage('BUILD') {
           def mvn_version = 'maven'
           withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
