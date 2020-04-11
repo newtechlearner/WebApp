@@ -19,11 +19,11 @@ node {
 		sh "${mvnHome}/bin/mvn clean package -Dmaven.test.skip=true"
       }
 		
-	  stage('Deploy QA'){
+      stage('Deploy QA'){
     	deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://3.17.208.192:8080/')], contextPath: 'QAWebapp', war: '**/*.war'
       }	
     
-      stage('BUILD') {
+      stage('Functional Test') {
 	  def mvnHome = tool name: 'maven', type: 'maven'
 	  dir ('functionaltest') {
                 sh "${mvnHome}/bin/mvn test"
