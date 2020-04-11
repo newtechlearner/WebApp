@@ -9,7 +9,7 @@ node {
     //rtMaven.tool = "maven"
 
     
-    stages {
+    
       stage('Clone sources') {
         git url: 'https://github.com/newtechlearner/webapp.git'
       }
@@ -22,7 +22,7 @@ node {
        maven 'maven'
        jdk 'jdk'
       }
-    }
+    
 
 }
 
