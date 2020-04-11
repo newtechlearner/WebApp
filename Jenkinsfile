@@ -15,9 +15,8 @@ node {
       }
       stage('BUILD') {
 
-      tools {
+      tool {
        maven 'maven'
-       jdk 'jdk'
       }
 
 }
