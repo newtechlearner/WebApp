@@ -18,8 +18,9 @@ node {
           def mvn_version = 'maven'
           withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
             sh "cd functionaltest"
-            sh "mvn clean"
+            sh "mvn test"
           }
+          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '\\functionaltest\\target\\surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
       }
 
     /*stage('Artifactory configuration') {
