@@ -8,9 +8,23 @@ node {
     
     //rtMaven.tool = "maven"
 
-    stage('Clone sources') {
+    
+    stages {
+      stage('Clone sources') {
         git url: 'https://github.com/newtechlearner/webapp.git'
+      }
+      stage('BUILD') {
+       steps {
+       // One or more steps need to be included within the steps block.
+        }
+
+      tools {
+       maven 'maven'
+       jdk 'jdk'
+      }
     }
+
+}
 
     /*stage('Artifactory configuration') {
         // Tool name from Jenkins configuration
@@ -27,8 +41,5 @@ node {
     stage('Publish build info') {
         server.publishBuildInfo buildInfo
     }*/
-    stage('BUILD') {
-        sh 'mvn clean compile'
-    }
 }
      
